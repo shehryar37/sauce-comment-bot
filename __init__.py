@@ -54,7 +54,6 @@ def login():
 def find_sauce(request_comment, submission, link, is_submitter=True):
     submission.comments.replace_more(limit=None)
     for comment in submission.comments.list():
-
         # Checks if the commenter is OP
         if comment.is_submitter == is_submitter:
             # Checks if commenter used appropriate tags
@@ -75,7 +74,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
 
                         return
                 else:
-                    print("u\Roboragi has not replied to {}".format(
+                    print("A sauce bot has not replied to {}".format(
                         comment.author.name))
 
             elif re.search(data.sauce_keyword, comment.body):
