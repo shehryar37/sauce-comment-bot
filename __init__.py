@@ -30,19 +30,19 @@ def main():
 
 def login():
     try:
-        # reddit = praw.Reddit(username="SauceCommentBot",
-        #                      password="@Reddit123",
-        #                      client_id="wQULoIPX2p5vkg",
-        #                      client_secret="f_smlHjE0zrvozuV9VYGooUJ4Kg",
-        #                      user_agent="SauceCommentBot by u/wizardhecate"
-        #                      )
-
-        reddit = praw.Reddit(username=os.environ["USERNAME"],
-                             password=os.environ["PASSWORD"],
-                             client_id=os.environ["CLIENT_ID"],
-                             client_secret=os.environ["CLIENT_SECRET"],
-                             user_agent=os.environ["USER_AGENT"]
+        reddit = praw.Reddit(username="SauceCommentBot",
+                             password="@Reddit123",
+                             client_id="wQULoIPX2p5vkg",
+                             client_secret="f_smlHjE0zrvozuV9VYGooUJ4Kg",
+                             user_agent="SauceCommentBot by u/wizardhecate"
                              )
+
+        # reddit = praw.Reddit(username=os.environ["USERNAME"],
+        #                      password=os.environ["PASSWORD"],
+        #                      client_id=os.environ["CLIENT_ID"],
+        #                      client_secret=os.environ["CLIENT_SECRET"],
+        #                      user_agent=os.environ["USER_AGENT"]
+        #                      )
 
         print("Logged in")
 
@@ -81,8 +81,12 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
                         comment.author.name))
 
             elif re.search(data.sauce_keyword, comment.body):
+                print("{} has left a custom sauce message: ({}{})".format(
+                    comment.author.name, link, comment.id))
                 reply_sauce(comment.body.replace(
                     "!sauce", "", 1), request_comment, link)
+
+                return
     else:
         if is_submitter:
             find_sauce(request_comment, submission,
