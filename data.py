@@ -8,7 +8,7 @@ subreddit_list = ['animemes', 'manga', 'anime_irl',
 sauce_request = r"(w+h+a*t+ *)+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+s*)|(s+a+u+c+e+s*\?+)|^(s+a+u+c+e+s*)$"
 
 # sauce checker
-sauce_regex = r"([\{]+.+?[\}]+)|([\]]+.+?[\[]+)|([\<]+.+?[\>]+)|([\|]+.+?[\|]+)|([\(]+[0-9]{,7}[\)]+)"
+sauce_regex = r"([\{]+[A-Za-z-:/!?]+[\}]+)|([\]]+[A-Za-z-:/!?]+[\[]+)|([\<]+[A-Za-z-:/!?]+[\>]+)|([\|]+[A-Za-z-:/!?]+[\|]+)|([\(]+[0-9]{,7}[\)]+)"
 sauce_keyword = r"!sauce"
 
 bots = ['Roboragi', 'nHentaiTagBot']
