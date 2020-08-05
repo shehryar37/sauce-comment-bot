@@ -15,8 +15,8 @@ def main():
     subreddit = reddit.subreddit("+".join(data.subreddit_list))
 
     for comment in subreddit.stream.comments(skip_existing=True):
-        # Checks for keyphrase
-        if re.search(data.keyphrase, comment.body.lower()):
+        # Checks for request
+        if re.search(data.sauce_request, comment.body.lower()):
             print("{} is asking for sauce ({}{})".format(
                 comment.author.name,
                 comment.link_permalink,
