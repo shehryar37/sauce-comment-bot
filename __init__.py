@@ -52,6 +52,9 @@ def login():
 
 
 def find_sauce(request_comment, submission, link, is_submitter=True):
+
+    bot = None
+
     submission.comments.replace_more(limit=None)
     for comment in submission.comments.list():
         # Checks if the commenter is OP
@@ -61,7 +64,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
                 print("{} has posted the sauce: ({}{})".format(
                     comment.author.name, link, comment.id))
 
-                # Checks if u/Roboragi replied to the comment
+                # Checks if a bot replied to the comment
                 for reply in comment.replies._comments:
                     if reply.author.name in data.bots:
                         print("u/{} has replied to {}: {}{}".format(
@@ -90,7 +93,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
             reply_sauce(reply, request_comment, link, False)
 
 
-def reply_sauce(reply, request_comment, link, is_found=True):
+def reply_sauce(reply, request_comment, link, is_found=True, bot=None):
     try:
         sauce_comment = request_comment.reply(reply)
         print("Replied with{} sauce message: ({}{})".format(
