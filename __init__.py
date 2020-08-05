@@ -16,7 +16,7 @@ def main():
 
     for comment in subreddit.stream.comments(skip_existing=True):
         # Checks for request
-        if re.search(data.sauce_request, comment.body.lower()):
+        if re.search(data.sauce_request, comment.body.lower()) and len(comment.body) < 25:
             print("{} is asking for sauce ({}{})".format(
                 comment.author.name,
                 comment.link_permalink,
