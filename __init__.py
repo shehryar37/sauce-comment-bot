@@ -97,7 +97,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
 
                 # Checks if SauceCommentBot has already replied to this commenter or not
 
-                reply_sauce(re.sub(comment.body, request_comment, link)
+                reply_sauce(re.sub(comment.body, request_comment, link))
 
                 return
     else:
@@ -105,7 +105,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
             find_sauce(request_comment, submission,
                        link, False)
         else:
-            reply=data.default_replies[random.randint(
+            reply = data.default_replies[random.randint(
                 0, len(data.default_replies) - 1)]
             reply_sauce(reply, request_comment, link,
                         extra_word=" no")
@@ -113,7 +113,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
 
 def reply_sauce(reply, request_comment, link, extra_word=""):
     try:
-        sauce_comment=request_comment.reply(reply)
+        sauce_comment = request_comment.reply(reply)
         print("Replied with{} sauce message: ({}{})".format(
             extra_word, link, sauce_comment.id))
     except Exception as e:
