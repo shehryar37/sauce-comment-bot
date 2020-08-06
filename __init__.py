@@ -16,7 +16,7 @@ def main():
 
     for comment in subreddit.stream.comments(skip_existing=True):
         # Checks for request
-        if re.search(data.sauce_request, comment.body.lower()) and len(comment.body) < 25:
+        if re.search(data.sauce_request, comment.body.lower()) and len(comment.body) < 35:
             print("{} is asking for sauce: ({}{})".format(
                 comment.author.name,
                 comment.link_permalink,
@@ -29,7 +29,7 @@ def main():
             find_sauce(comment, submission, comment.link_permalink)
 
         elif re.search("{}|{}".format(data.sauce_provided_regex, data.sauce_regex), comment.body.lower()) and len(comment.body) < 30:
-            print("{} has just posted sauce on a submission: ({}{})".format(
+            print("{} has posted sauce on a submission: ({}{})".format(
                 comment.author.name,
                 comment.link_permalink,
                 comment.id
