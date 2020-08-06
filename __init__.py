@@ -28,7 +28,7 @@ def main():
 
             find_sauce(comment, submission, comment.link_permalink)
 
-        elif re.search("{}|{}".format(data.sauce_provided_regex, data.sauce_regex), comment.body.lower()) and len(comment.body < 30):
+        elif re.search("{}|{}".format(data.sauce_provided_regex, data.sauce_regex), comment.body.lower()) and len(comment.body) < 30:
             print("{} has just posted sauce on a submission: ({}{})".format(
                 comment.author.name,
                 comment.link_permalink,
