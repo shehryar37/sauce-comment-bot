@@ -16,7 +16,7 @@ sauce_regex = r"([\{]+[A-Za-z0-9-:/!? ]+[\}]+)|([\]]+[A-Za-z0-9-:/!? ]+[\[]+)|([
 
 bots = ['Roboragi', 'nHentaiTagBot']
 
-sauce_reply = "Thank you for providing sauce! I will ensure that it is passed on to anyone who asks for it in the comments later on. This subreddit needs more OPs like you! Arigato!!"
+sauce_reply = "Thank you for providing sauce! I will ensure that it is passed on to anyone who asks for it in the comments later on. This subreddit needs more people like you! Arigato!!"
 
 default_replies = [
     '''Konnichiwa! No one has provided thde sauce using bots so far.    \
