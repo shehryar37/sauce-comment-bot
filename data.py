@@ -8,7 +8,7 @@ subreddit_list = ['animemes', 'manga',
 sauce_request = r"((w+h+a*t+ *)|(w+h+e+r+e *))+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+s*)|(s+a+u+c+e+s*\?+)|^(s+a+u+c+e+s*)$"
 
 # sauce provided by OP checker
-sauce_provided_keyword = r"((t+h+i+s+ *)|(h+e+r*e+ *))+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+)|(!+s+a+u+c+e+)|(s+a+u+c+e+:)"
+sauce_provided_regex = r"((t+h+i+s+ *)|(h+e+r*e+ *))+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+)|(!+s+a+u+c+e+)|(s+a+u+c+e+:)"
 
 # sauce request checker
 sauce_regex = r"([\{]+[A-Za-z0-9-:/!? ]+[\}]+)|([\]]+[A-Za-z0-9-:/!? ]+[\[]+)|([\<]+[A-Za-z0-9-:/!? ]+[\>]+)|([\|]+[A-Za-z0-9-:/!? ]+[\|]+)|([\(]+[0-9]{1,7}[\)]+)"

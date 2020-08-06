@@ -27,15 +27,16 @@ def main():
             submission = reddit.submission(comment.submission)
 
             find_sauce(comment, submission, comment.link_permalink)
-        elif re.search(data.sauce_provided_keyword, comment.body.lower()) and comment.is_submitter:
-            print("{} has posted sauce on their submission: ({}{})".format(
+
+        elif re.search("{}|{}".format(data.sauce_provided_regex, data.sauce_regex), comment.body.lower()) and len(comment.body < 30):
+            print("{} has just posted sauce on a submission: ({}{})".format(
                 comment.author.name,
                 comment.link_permalink,
                 comment.id
             ))
 
             reply_sauce(data.sauce_reply, comment,
-                        comment.link_permalink, "provided")
+                        comment.link_permalink, " provided")
 
 
 def login():
@@ -90,20 +91,13 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
                     print("A sauce bot has not replied to {}".format(
                         comment.author.name))
 
-            elif re.search(data.sauce_provided_keyword, comment.body.lower()):
-                print("{} has left a custom sauce message: ({}{})".format(
+            elif re.search(data.sauce_provided_regex, comment.body.lower()):
+                print("{} has posted the (custom) sauce: ({}{})".format(
                     comment.author.name, link, comment.id))
 
                 # Checks if SauceCommentBot has already replied to this commenter or not
-                for reply in comment.replies._comments:
-                    if reply.author.name == 'SauceCommentBot':
-                        break
-                else:
-                    reply_sauce(data.sauce_reply, comment,
-                                comment.link_permalink, "provided")
 
-                reply_sauce(re.sub(data.sauce_provided_keyword, "",
-                                   comment.body), request_comment, link)
+                reply_sauce(re.sub(comment.body, request_comment, link)
 
                 return
     else:
@@ -111,16 +105,16 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
             find_sauce(request_comment, submission,
                        link, False)
         else:
-            reply = data.default_replies[random.randint(
+            reply=data.default_replies[random.randint(
                 0, len(data.default_replies) - 1)]
             reply_sauce(reply, request_comment, link,
-                        extra_word="no")
+                        extra_word=" no")
 
 
 def reply_sauce(reply, request_comment, link, extra_word=""):
     try:
-        sauce_comment = request_comment.reply(reply)
-        print("Replied with {} sauce message: ({}{})".format(
+        sauce_comment=request_comment.reply(reply)
+        print("Replied with{} sauce message: ({}{})".format(
             extra_word, link, sauce_comment.id))
     except Exception as e:
         print(e)
