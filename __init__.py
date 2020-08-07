@@ -29,6 +29,7 @@ def main():
             find_sauce(comment, submission, comment.link_permalink)
 
         elif (re.search(data.sauce_provided_regex, comment.body.lower())) or (re.search(data.sauce_regex, comment.body.lower()) and len(comment.body) < 40):
+            # Does not comment if the poster is the bot itself
             if comment.author.name != 'SauceCommentBot':
                 print("{} has posted sauce on a submission: ({}{})".format(
                     comment.author.name,
