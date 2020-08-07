@@ -97,7 +97,7 @@ def find_sauce(request_comment, submission, link, is_submitter=True):
 
                 # Checks if SauceCommentBot has already replied to this commenter or not
 
-                reply_sauce(re.sub(comment.body, request_comment, link))
+                reply_sauce(comment.body, request_comment, link)
 
                 return
     else:
