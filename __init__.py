@@ -29,31 +29,32 @@ def main():
             find_sauce(comment, submission, comment.link_permalink)
 
         elif (re.search(data.sauce_provided_regex, comment.body.lower())) or (re.search(data.sauce_regex, comment.body.lower()) and len(comment.body) < 40):
-            print("{} has posted sauce on a submission: ({}{})".format(
-                comment.author.name,
-                comment.link_permalink,
-                comment.id
-            ))
+            if comment.author.name != 'SauceCommentBot':
+                print("{} has posted sauce on a submission: ({}{})".format(
+                    comment.author.name,
+                    comment.link_permalink,
+                    comment.id
+                ))
 
-            reply_sauce(data.sauce_reply, comment,
-                        comment.link_permalink, " provided")
+                reply_sauce(data.sauce_reply, comment,
+                            comment.link_permalink, " provided")
 
 
 def login():
     try:
-        reddit = praw.Reddit(username="SauceCommentBot",
-                             password="@Reddit123",
-                             client_id="wQULoIPX2p5vkg",
-                             client_secret="f_smlHjE0zrvozuV9VYGooUJ4Kg",
-                             user_agent="SauceCommentBot by u/wizardhecate"
-                             )
-
-        # reddit = praw.Reddit(username=os.environ["USERNAME"],
-        #                      password=os.environ["PASSWORD"],
-        #                      client_id=os.environ["CLIENT_ID"],
-        #                      client_secret=os.environ["CLIENT_SECRET"],
-        #                      user_agent=os.environ["USER_AGENT"]
+        # reddit = praw.Reddit(username="SauceCommentBot",
+        #                      password="@Reddit123",
+        #                      client_id="wQULoIPX2p5vkg",
+        #                      client_secret="f_smlHjE0zrvozuV9VYGooUJ4Kg",
+        #                      user_agent="SauceCommentBot by u/wizardhecate"
         #                      )
+
+        reddit = praw.Reddit(username=os.environ["USERNAME"],
+                             password=os.environ["PASSWORD"],
+                             client_id=os.environ["CLIENT_ID"],
+                             client_secret=os.environ["CLIENT_SECRET"],
+                             user_agent=os.environ["USER_AGENT"]
+                             )
 
         print("Logged in")
 

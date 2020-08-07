@@ -1,11 +1,11 @@
-subreddit_list = ['animemes', 'manga', 'animenocontext', 'animebikinis', 'animegifs', 'animeow_irl', 'animephonewallpapers', 'animesketch', 'animevectorwallpapers', 'animewallpaper', 'anime_faces', 'ANI_COMMUNISM', 'AskAnime', 'awwnimate', 'awwnime', 'bannedfromanime_irl', 'BokuNoHeroAcademia', 'CuteLittleFangs', 'DDLC', 'DoritoHair', 'droppedanime', 'ecchi', 'endcard', 'existentialanime', 'ftfanime', 'hentai_irl', 'JapaneseASMR', 'lightnovels', 'loli_irl',
+subreddit_list = ['animemes', 'manga', 'animenocontext', 'animebikinis', 'animegifs', 'animeow_irl', 'animephonewallpapers', 'animesketch', 'animevectorwallpapers', 'animewallpaper', 'anime_faces', 'ANI_COMMUNISM', 'AskAnime', 'awwnimate', 'bannedfromanime_irl', 'BokuNoHeroAcademia', 'CuteLittleFangs', 'DDLC', 'DoritoHair', 'droppedanime', 'ecchi', 'endcard', 'existentialanime', 'ftfanime', 'hentai_irl', 'JapaneseASMR', 'lightnovels', 'loli_irl',
                   'Manga_Collection', 'metaanime', 'Moescape', 'monogatariplot', 'nihilate', 'noveltranslations', 'pantsu', 'patchuu', 'PockyKiss', 'porn_irl', 'pouts', 'qualityanime', 'roboragi', 'shorthairedwaifus', 'smugs', 'StitchesOfAnime', 'SUBSFUCKINGWHERE', 'toomeirlforanime_irl', 'trashwaifus', 'trueanime', 'TwoDeeArt', 'UQHolder', 'WaifuForLaifu', 'WaifusForTrump', 'watchinganime', 'weeabootales', 'WhatAWeeb', 'wholesomeyaoi', 'wholesomeyuri', 'yuri', 'yshirt']
 
 # Add wholesomeanimemes after September 10
 # Add hentai after August 11
 
 # keyphrase
-sauce_request = r"((w+h+a*t+ *)|(w+h+e+r+e *))+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+s*)|(s+a+u+c+e+s*\?+)|^(s+a+u+c+e+s*)$"
+sauce_request = r"((w+h+a*t+ *)|(w+h+e+r+e *))+('*i*s+ *)*(t+h+e+ *)*(a+n+i+m+e+s* *)*(s+a+u+c+e+s*)|(s+a+u+c+e+s*\?+)|^(s+a+u+c+e+s*)$"
 
 # sauce provided by OP checker
 sauce_provided_regex = r"((t+h+i+s+ *)|(h+e+r*e+ *))+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+)|(!+s+a+u+c+e+)|(s+a+u+c+e+:)"
