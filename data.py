@@ -11,7 +11,7 @@ sauce_request = r"((w+h+a*t+ *)|(w+h+e+r+e *))+('*i*s+ *)*(t+h+e+ *)*(a+n+i+m+e+
 sauce_provided_regex = r"((t+h+i+s+ *)|(h+e+r*e+ *))+('*i*s+ *)*(t+h+e+ *)*(s+a+u+c+e+)|(!+s+a+u+c+e+)|(s+a+u+c+e+:[^'])"
 
 # sauce request checker
-sauce_regex = r"([\{]+[A-Za-z0-9-:/!? ]+[\}]+)|([\]]+[A-Za-z0-9-:/!? ]+[\[]+)|([\<]+[A-Za-z0-9-:/!? ]+[\>]+)|([\|]+[A-Za-z0-9-:/!? ]+[\|]+)|([\(]+[0-9]{1,7}[\)]+)"
+sauce_regex = r"([\{]+[\}]+)|([\]]+[\[]+)|([\<]+[\>]+)|([\|]+[\|]+)|([\(]+[0-9]{1,7}[\)]+)"
 
 
 bots = ['Roboragi', 'nHentaiTagBot']
